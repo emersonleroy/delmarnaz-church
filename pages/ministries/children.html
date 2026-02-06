@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children's Ministry | Delmar Church of Nazarene</title>
+    <meta name="description" content="Building a foundation of faith in young hearts. Children's Ministry at Delmar Church of Nazarene - where kids discover God's love through fun, age-appropriate activities.">
+    <meta name="keywords" content="Delmar Church children's ministry, kids ministry, Sunday School, nursery, Delmar DE, Church of the Nazarene">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#E8F5E3', 100: '#D4E8C8', 200: '#B5D69E', 300: '#8FBF6E',
+                            400: '#72A84E', 500: '#5A9236', 600: '#4A7C2C', 700: '#3A6620',
+                            800: '#2D5016', 900: '#1A3009',
+                        },
+                        accent: {
+                            50: '#FCF6E8', 100: '#F8ECC8', 200: '#F2DBA4', 300: '#EAC97D',
+                            400: '#E0B85C', 500: '#D4A73F', 600: '#C4962C', 700: '#A8801A',
+                            800: '#8B6914', 900: '#6B4F0F',
+                        },
+                        cream: '#FAF7F2',
+                        'pale-green': '#E8F5E3',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <style>
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        .age-card {
+            transition: all 0.3s ease;
+        }
+        .age-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-cream">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="site-header">
+        <div class="header-top bg-primary-800">
+            <div class="container flex justify-between items-center text-sm py-2">
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="tel:+13028462899" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>(302) 846-2899</span>
+                    </a>
+                    <a href="mailto:office@delmarnaz.com" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>office@delmarnaz.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 ml-auto">
+                    <span class="text-white/90">Sunday Worship: 10:30 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main bg-white shadow-sm">
+            <div class="nav-container">
+                <a href="/en/" class="site-logo flex items-center gap-3">
+                    <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 md:h-14 w-auto" loading="eager">
+                    <div class="site-logo-text text-primary-800 hidden sm:block">
+                        Delmar Church
+                        <span class="text-primary-600">of Nazarene</span>
+                    </div>
+                </a>
+
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">About</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/about/our-story.html">Our Story</a>
+                                <a href="/pages/about/our-beliefs.html">Our Beliefs</a>
+                                <a href="/pages/about/staff.html">Staff</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown active" aria-expanded="false">Ministries</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/ministries/youth.html">Youth Ministry</a>
+                                <a href="/pages/ministries/children.html" class="active">Children's Ministry</a>
+                                <a href="/pages/ministries/outreach.html">Outreach</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Worship</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/worship/service-times.html">Service Times</a>
+                                <a href="/pages/worship/what-to-expect.html">What to Expect</a>
+                                <a href="/pages/worship/livestream.html">Watch Live</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/pages/sermons.html" class="nav-link">Sermons</a></li>
+                        <li class="nav-item"><a href="/pages/events.html" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="/pages/give.html" class="nav-link">Give</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Connect</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/connect/new-here.html">New Here?</a>
+                                <a href="/pages/connect/prayer-requests.html">Prayer Requests</a>
+                                <a href="/pages/connect/visit.html">Visit Us</a>
+                                <a href="/pages/connect/contact.html">Contact Us</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn disabled" data-lang="ht">HT</button>
+                        <button class="lang-btn disabled" data-lang="fr">FR</button>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="/en/" class="site-logo flex items-center gap-2">
+                <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-10 w-auto">
+                <span class="font-serif font-bold text-primary-800 text-sm">Delmar Church of Nazarene</span>
+            </a>
+            <button class="mobile-nav-close" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/pages/about/our-story.html">Our Story</a></li>
+            <li><a href="/pages/about/our-beliefs.html">Our Beliefs</a></li>
+            <li><a href="/pages/about/staff.html">Staff</a></li>
+            <li><a href="/pages/ministries/children.html" class="text-accent-600 font-semibold">Children's Ministry</a></li>
+            <li><a href="/pages/worship/service-times.html">Worship</a></li>
+            <li><a href="/pages/sermons.html">Sermons</a></li>
+            <li><a href="/pages/events.html">Events</a></li>
+            <li><a href="/pages/give.html">Give</a></li>
+            <li><a href="/pages/connect/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main-content">
+
+        <!-- ============================================
+             HERO SECTION
+             ============================================ -->
+        <section class="relative min-h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <!-- Background Image Placeholder -->
+            <div class="absolute inset-0 z-0">
+                <!-- TODO: Add dynamic children's ministry photo -->
+                <div class="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-accent-700"></div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-br from-primary-900/90 via-primary-800/85 to-accent-700/80"></div>
+
+            <!-- Content -->
+            <div class="relative z-20 max-w-4xl px-4 py-16">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4 text-white">Children's Ministry</h1>
+                <p class="text-xl md:text-2xl text-primary-100 mb-6 max-w-2xl mx-auto">
+                    Building a foundation of faith in young hearts
+                </p>
+
+                <!-- Breadcrumb -->
+                <nav class="mt-8 text-sm text-white/70" aria-label="Breadcrumb">
+                    <a href="/en/" class="hover:text-white">Home</a>
+                    <span class="mx-2">/</span>
+                    <a href="/pages/ministries/index.html" class="hover:text-white">Ministries</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white">Children's Ministry</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ============================================
+             OUR HEART FOR CHILDREN SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-cream">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-600 rounded-2xl mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-6">Where Kids Love Coming to Church!</h2>
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        We believe every child is precious in God's sight. Our children's ministry provides a safe, fun, and engaging environment where kids can learn about Jesus and grow in their faith. Through creative Bible lessons, worship, games, and crafts, we help children understand God's love and discover how they can live for Him every day.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             AGE GROUPS SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">Programs by Age</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Age-appropriate experiences designed for every stage of childhood</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                    <!-- Nursery -->
+                    <div class="age-card bg-pale-green rounded-2xl p-8 text-center">
+                        <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-2">Nursery</h3>
+                        <p class="text-accent-700 font-semibold mb-4">Birth - 2 years</p>
+                        <p class="text-gray-600">
+                            Loving care for our littlest ones in a safe, nurturing environment while parents worship. Our trained caregivers provide gentle attention and age-appropriate activities.
+                        </p>
+                    </div>
+
+                    <!-- Preschool -->
+                    <div class="age-card bg-pale-green rounded-2xl p-8 text-center">
+                        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-2">Preschool</h3>
+                        <p class="text-primary-700 font-semibold mb-4">Ages 3 - 5</p>
+                        <p class="text-gray-600">
+                            Fun Bible stories, songs, crafts, and play that introduce young hearts to God's love. Children learn foundational truths about Jesus through interactive, hands-on activities.
+                        </p>
+                    </div>
+
+                    <!-- Elementary -->
+                    <div class="age-card bg-pale-green rounded-2xl p-8 text-center">
+                        <div class="w-20 h-20 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-2">Elementary</h3>
+                        <p class="text-accent-700 font-semibold mb-4">K - 5th Grade</p>
+                        <p class="text-gray-600">
+                            Interactive Bible lessons, worship, games, and activities that help kids grow in faith. Children discover how to apply God's Word to their everyday lives.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WHAT WE DO SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-pale-green">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">What We Do</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Fun, engaging ways to help kids grow in their faith</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+                    <!-- Bible Teaching -->
+                    <div class="feature-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-primary-900 mb-2">Bible Teaching</h3>
+                        <p class="text-gray-600 text-sm">
+                            Age-appropriate lessons that make God's Word come alive for young minds.
+                        </p>
+                    </div>
+
+                    <!-- Worship -->
+                    <div class="feature-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-primary-900 mb-2">Kids Worship</h3>
+                        <p class="text-gray-600 text-sm">
+                            Fun, energetic songs and worship time that kids love to sing along with.
+                        </p>
+                    </div>
+
+                    <!-- Games & Activities -->
+                    <div class="feature-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-primary-900 mb-2">Games & Activities</h3>
+                        <p class="text-gray-600 text-sm">
+                            Interactive games and activities that reinforce the lesson and build friendships.
+                        </p>
+                    </div>
+
+                    <!-- Crafts -->
+                    <div class="feature-card bg-white rounded-2xl shadow-lg p-6 text-center">
+                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-lg font-bold text-primary-900 mb-2">Creative Crafts</h3>
+                        <p class="text-gray-600 text-sm">
+                            Hands-on craft projects that help kids remember what they've learned.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SAFETY SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <div class="inline-flex items-center justify-center w-14 h-14 bg-primary-700 rounded-2xl mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <h2 class="font-serif text-3xl font-bold text-primary-900 mb-4">Your Child's Safety is Our Priority</h2>
+                            <p class="text-gray-600 mb-6">
+                                We take the safety and security of your children seriously. Here's how we keep kids safe:
+                            </p>
+                            <ul class="space-y-3">
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="text-gray-700">All volunteers are background checked</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="text-gray-700">Secure check-in and check-out system</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="text-gray-700">Trained and caring volunteers</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="text-gray-700">Clean, age-appropriate environments</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                                    </svg>
+                                    <span class="text-gray-700">Parent notification system if needed</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bg-pale-green rounded-2xl p-8 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 text-primary-600 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <h3 class="font-serif text-2xl font-bold text-primary-900 mb-2">Safe & Secure</h3>
+                            <p class="text-gray-600">
+                                We follow best practices for child safety so you can worship with peace of mind, knowing your children are well cared for.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WHEN WE MEET SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-pale-green">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                        <h2 class="font-serif text-3xl font-bold text-primary-900 mb-8 text-center">When We Meet</h2>
+
+                        <!-- CHILDREN'S MINISTRY TIMES PLACEHOLDER -->
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-primary-800">Sunday School</p>
+                                    <p class="text-gray-600">Sundays at 9:00 AM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                                <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-primary-800">Sunday Worship (Children's Church)</p>
+                                    <p class="text-gray-600">Sundays at 10:30 AM (during adult worship)</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 bg-cream rounded-xl">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-primary-800">Location</p>
+                                    <p class="text-gray-600">36926 Hideaway Ln, Delmar, DE 19940</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PLACEHOLDER -->
+
+                        <p class="text-center text-gray-500 mt-6 text-sm">
+                            Contact us for information about special events and programs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             FOR PARENTS SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">For Parents</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+                    <!-- First Visit -->
+                    <div class="bg-cream rounded-2xl p-8">
+                        <div class="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-4">First Time Visiting?</h3>
+                        <p class="text-gray-600 mb-4">
+                            We make it easy for first-time families! Simply arrive a few minutes early and look for our welcome team. We'll help you get your children checked in and show you around our kids' spaces.
+                        </p>
+                        <a href="/pages/connect/visit.html" class="inline-flex items-center gap-2 text-primary-700 hover:text-primary-600 font-semibold">
+                            Plan Your Visit
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Volunteer -->
+                    <div class="bg-cream rounded-2xl p-8">
+                        <div class="w-14 h-14 bg-accent-100 rounded-xl flex items-center justify-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-4">Serve With Us</h3>
+                        <p class="text-gray-600 mb-4">
+                            Love working with kids? We're always looking for caring adults who want to make a difference in the lives of children. No experience necessary—just a heart to serve!
+                        </p>
+                        <a href="/pages/connect/contact.html" class="inline-flex items-center gap-2 text-accent-700 hover:text-accent-600 font-semibold">
+                            Learn About Volunteering
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CTA SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-primary-800">
+            <div class="container mx-auto px-4 text-center">
+                <div class="max-w-3xl mx-auto">
+                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                    </div>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Questions About Children's Ministry?</h2>
+                    <p class="text-xl text-primary-200 mb-8">
+                        We'd love to tell you more about our children's programs and how your family can get connected.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                        <a href="mailto:office@delmarnaz.com" class="flex items-center gap-2 text-primary-200 hover:text-white font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            office@delmarnaz.com
+                        </a>
+                        <span class="hidden sm:inline text-white/30">|</span>
+                        <a href="tel:+13028462899" class="flex items-center gap-2 text-primary-200 hover:text-white font-semibold">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            (302) 846-2899
+                        </a>
+                    </div>
+
+                    <a href="/pages/connect/contact.html" class="inline-flex items-center justify-center gap-2 bg-accent-600 hover:bg-accent-500 text-primary-900 font-bold py-4 px-8 rounded-lg transition-all shadow-lg">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-primary-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- Contact Info Column -->
+                <div>
+                    <a href="/en/" class="flex items-center gap-3 mb-6">
+                        <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 w-auto brightness-0 invert">
+                        <span class="font-serif font-bold text-xl">Delmar Church<br><span class="text-primary-300 text-sm font-normal">of Nazarene</span></span>
+                    </a>
+                    <div class="space-y-3 text-primary-200">
+                        <p class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>36926 Hideaway Ln<br>Delmar, DE 19940</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="tel:+13028462899" class="hover:text-white transition-colors">(302) 846-2899</a>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:office@delmarnaz.com" class="hover:text-white transition-colors">office@delmarnaz.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="/pages/about/our-story.html" class="text-primary-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/pages/ministries/index.html" class="text-primary-200 hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/pages/events.html" class="text-primary-200 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/pages/sermons.html" class="text-primary-200 hover:text-white transition-colors">Sermons</a></li>
+                        <li><a href="/pages/give.html" class="text-primary-200 hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/pages/connect/contact.html" class="text-primary-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Times Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Service Times</h5>
+                    <ul class="space-y-3 text-primary-200">
+                        <li class="flex justify-between">
+                            <span>Sunday School:</span>
+                            <span class="text-accent-400 font-semibold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday Worship:</span>
+                            <span class="text-accent-400 font-semibold">10:30 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Wed. Bible Study:</span>
+                            <span class="text-accent-400 font-semibold">6:00 PM</span>
+                        </li>
+                    </ul>
+                    <a href="/pages/worship/livestream.html" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 mt-4 font-semibold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        Watch Live
+                    </a>
+                </div>
+
+                <!-- Connect Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Connect With Us</h5>
+                    <div class="flex gap-3 mb-6">
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Join us this Sunday!<br>
+                        We'd love to meet you.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-primary-400">&copy; 2025 Delmar Church of Nazarene. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/language-switcher.js"></script>
+</body>
+</html>

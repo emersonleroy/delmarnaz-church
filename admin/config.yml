@@ -1,0 +1,175 @@
+# Decap CMS Configuration
+# =======================
+# This file configures Decap CMS (formerly Netlify CMS) for content management.
+#
+# SETUP INSTRUCTIONS:
+# 1. Enable Netlify Identity on your Netlify site
+# 2. Enable Git Gateway in Netlify Identity settings
+# 3. Create an admin/index.html file to load the CMS (see below)
+# 4. Invite users through Netlify Identity
+#
+# For more info: https://decapcms.org/docs/
+
+backend:
+  name: git-gateway
+  branch: main # Branch to update (change if using a different branch)
+
+# Media files configuration
+media_folder: "assets/images/uploads" # Where uploaded media will be stored
+public_folder: "/assets/images/uploads" # Public path to media files
+
+# Site URL (update with your actual domain)
+site_url: https://delmarnazarene.org
+display_url: https://delmarnazarene.org
+
+# Logo for the CMS
+logo_url: /assets/images/logo.png
+
+# Slug configuration
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+# Collections (content types)
+collections:
+  # Blog Posts
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "Delmar Nazarene Church" }
+      - { label: "Category", name: "category", widget: "select", options: ["News", "Devotional", "Announcements", "Testimony"] }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # Sermons
+  - name: "sermons"
+    label: "Sermons"
+    folder: "_posts/sermons"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date Preached", name: "date", widget: "datetime" }
+      - { label: "Speaker", name: "speaker", widget: "string" }
+      - { label: "Scripture Reference", name: "scripture", widget: "string", required: false }
+      - { label: "Series", name: "series", widget: "string", required: false }
+      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Video URL (YouTube/Vimeo)", name: "video_url", widget: "string", required: false }
+      - { label: "Audio URL", name: "audio_url", widget: "string", required: false }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Notes/Outline", name: "body", widget: "markdown", required: false }
+
+  # Events
+  - name: "events"
+    label: "Events"
+    folder: "_posts/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Event Name", name: "title", widget: "string" }
+      - { label: "Event Date", name: "event_date", widget: "datetime" }
+      - { label: "End Date (if multi-day)", name: "end_date", widget: "datetime", required: false }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false }
+      - { label: "Category", name: "category", widget: "select", options: ["Worship", "Youth", "Children", "Outreach", "Fellowship", "Special"] }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Registration URL", name: "registration_url", widget: "string", required: false }
+      - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
+
+  # Staff/Leadership
+  - name: "staff"
+    label: "Staff & Leadership"
+    folder: "_data/staff"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Title/Role", name: "title", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image", required: false }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Bio", name: "bio", widget: "markdown" }
+      - { label: "Order (for sorting)", name: "order", widget: "number", default: 0 }
+      - { label: "Category", name: "category", widget: "select", options: ["Pastoral Staff", "Ministry Leaders", "Board Members"] }
+
+  # Pages (for editing existing static pages)
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "_data/pages/home.yml"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
+          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+          - { label: "Welcome Section Title", name: "welcome_title", widget: "string" }
+          - { label: "Welcome Section Text", name: "welcome_text", widget: "markdown" }
+
+      - label: "About - Our Story"
+        name: "our-story"
+        file: "_data/pages/our-story.yml"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "markdown" }
+          - { label: "Timeline Events", name: "timeline", widget: "list", fields: [
+              { label: "Year", name: "year", widget: "string" },
+              { label: "Title", name: "title", widget: "string" },
+              { label: "Description", name: "description", widget: "text" }
+            ]}
+
+  # Site Settings
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "_data/settings/general.yml"
+        fields:
+          - { label: "Church Name", name: "church_name", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address Line 1", name: "address1", widget: "string" }
+          - { label: "Address Line 2", name: "address2", widget: "string" }
+          - { label: "City, State ZIP", name: "city_state_zip", widget: "string" }
+
+      - label: "Service Times"
+        name: "services"
+        file: "_data/settings/services.yml"
+        fields:
+          - { label: "Services", name: "services", widget: "list", fields: [
+              { label: "Service Name", name: "name", widget: "string" },
+              { label: "Day", name: "day", widget: "string" },
+              { label: "Time", name: "time", widget: "string" },
+              { label: "Description", name: "description", widget: "string", required: false }
+            ]}
+
+      - label: "Social Media"
+        name: "social"
+        file: "_data/settings/social.yml"
+        fields:
+          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
+          - { label: "Twitter/X URL", name: "twitter", widget: "string", required: false }
+
+# NOTE: To complete CMS setup, create admin/index.html with the following content:
+# <!DOCTYPE html>
+# <html>
+# <head>
+#   <meta charset="utf-8" />
+#   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+#   <title>Content Manager | Delmar Nazarene Church</title>
+#   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+# </head>
+# <body>
+#   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+# </body>
+# </html>

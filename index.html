@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=/en/">
+    <title>Delmar Church of Nazarene - Redirecting...</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Welcome to Delmar Church of Nazarene. A welcoming community of faith.">
+    <meta name="robots" content="noindex, follow">
+
+    <!-- Favicon (add your favicon files to assets/images/) -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+    <style>
+        /* Simple loading styles while redirect happens */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            color: white;
+        }
+        .loader {
+            text-align: center;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+        <p>Redirecting to Delmar Church of Nazarene...</p>
+    </div>
+
+    <script>
+        /**
+         * Language Detection and Redirect Script
+         * =======================================
+         *
+         * CURRENT BEHAVIOR (Phase 1):
+         * - Redirects all visitors to English (/en/)
+         *
+         * FUTURE BEHAVIOR (Phase 2 & 3):
+         * - Uncomment the language detection code below
+         * - Will detect browser language and redirect accordingly
+         * - Supports: English (en), Haitian Creole (ht), French (fr)
+         */
+
+        // Supported languages configuration
+        const SUPPORTED_LANGUAGES = {
+            'en': '/en/',      // English - Active
+            // 'ht': '/ht/',   // Haitian Creole - Phase 2
+            // 'fr': '/fr/'    // French - Phase 3
+        };
+
+        const DEFAULT_LANGUAGE = 'en';
+
+        /**
+         * FUTURE: Language Detection Function
+         * Uncomment this when Haitian Creole and French versions are ready
+         */
+        /*
+        function detectLanguage() {
+            // Check for saved language preference
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang && SUPPORTED_LANGUAGES[savedLang]) {
+                return savedLang;
+            }
+
+            // Check browser language settings
+            const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
+
+            for (const lang of browserLangs) {
+                // Get the primary language code (e.g., 'en-US' -> 'en')
+                const primaryLang = lang.split('-')[0].toLowerCase();
+
+                // Special handling for Haitian Creole variants
+                if (lang.toLowerCase().includes('ht') || lang.toLowerCase().includes('haitian')) {
+                    return 'ht';
+                }
+
+                // Check if we support this language
+                if (SUPPORTED_LANGUAGES[primaryLang]) {
+                    return primaryLang;
+                }
+            }
+
+            return DEFAULT_LANGUAGE;
+        }
+
+        // Perform language-based redirect
+        const detectedLang = detectLanguage();
+        window.location.replace(SUPPORTED_LANGUAGES[detectedLang]);
+        */
+
+        // CURRENT: Simple redirect to English
+        // The meta refresh above handles this, but JS provides faster redirect
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+            window.location.replace('/en/');
+        }
+    </script>
+
+    <!-- Fallback for users with JavaScript disabled -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=/en/">
+        <p>Please <a href="/en/">click here</a> to continue to Delmar Church of Nazarene.</p>
+    </noscript>
+</body>
+</html>

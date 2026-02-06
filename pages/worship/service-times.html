@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Times | Delmar Church of Nazarene</title>
+    <meta name="description" content="Join us for worship at Delmar Church of Nazarene. Find our service times, location, and what to expect when you visit.">
+
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50: '#E8F5E3', 100: '#D4E8C8', 200: '#B5D69E', 300: '#8FBF6E', 400: '#72A84E', 500: '#5A9236', 600: '#4A7C2C', 700: '#3A6620', 800: '#1e3a5f', 900: '#0f1d2f' },
+                        accent: { 50: '#FCF6E8', 100: '#F8ECC8', 200: '#F2DBA4', 300: '#EAC97D', 400: '#E0B85C', 500: '#D4A73F', 600: '#C4962C', 700: '#A8801A', 800: '#8a6839', 900: '#5c4526' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Merriweather', 'serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container flex justify-between items-center text-sm">
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:+1234567890" class="flex items-center gap-2 text-white/80 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                        <span>(123) 456-7890</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 ml-auto"><span class="text-white/80">Sundays at 10:00 AM</span></div>
+            </div>
+        </div>
+        <div class="header-main bg-white shadow-sm">
+            <div class="nav-container">
+                <a href="/en/" class="site-logo flex items-center gap-3">
+                    <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 md:h-14 w-auto" loading="eager">
+                    <div class="site-logo-text text-primary-800 hidden sm:block">Delmar Church<span class="text-primary-600">of Nazarene</span></div>
+                </a>
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link has-dropdown">About</a><div class="nav-dropdown"><a href="/pages/about/our-story.html">Our Story</a><a href="/pages/about/our-beliefs.html">Our Beliefs</a><a href="/pages/about/mission-vision.html">Mission & Vision</a><a href="/pages/about/staff.html">Staff</a></div></li>
+                        <li class="nav-item"><a href="#" class="nav-link has-dropdown">Ministries</a><div class="nav-dropdown"><a href="/pages/ministries/youth.html">Youth Ministry</a><a href="/pages/ministries/children.html">Children's Ministry</a><a href="/pages/ministries/outreach.html">Outreach</a></div></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown active">Worship</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/worship/service-times.html">Service Times</a>
+                                <a href="/pages/worship/what-to-expect.html">What to Expect</a>
+                                <a href="/pages/worship/livestream.html">Watch Live</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/pages/sermons.html" class="nav-link">Sermons</a></li>
+                        <li class="nav-item"><a href="/pages/events.html" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="/pages/give.html" class="nav-link">Give</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link has-dropdown">Connect</a><div class="nav-dropdown"><a href="/pages/connect/new-here.html">New Here?</a><a href="/pages/connect/prayer-requests.html">Prayer Requests</a><a href="/pages/connect/contact.html">Contact Us</a></div></li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn disabled" data-lang="ht">HT</button>
+                        <button class="lang-btn disabled" data-lang="fr">FR</button>
+                    </div>
+                </nav>
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="/en/" class="site-logo flex items-center gap-3"><img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-10 w-auto"><span class="font-serif font-bold text-primary-800">Delmar Nazarene</span></a>
+            <button class="mobile-nav-close" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg></button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/pages/worship/service-times.html">Service Times</a></li>
+            <li><a href="/pages/worship/what-to-expect.html">What to Expect</a></li>
+            <li><a href="/pages/worship/livestream.html">Watch Live</a></li>
+            <li><a href="/pages/sermons.html">Sermons</a></li>
+            <li><a href="/pages/events.html">Events</a></li>
+            <li><a href="/pages/give.html">Give</a></li>
+            <li><a href="/pages/connect/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <h1>Service Times</h1>
+                <p class="text-lg opacity-90 mt-2">Join us for worship each week</p>
+                <nav class="breadcrumb mt-4" aria-label="Breadcrumb">
+                    <a href="/en/">Home</a><span>/</span><a href="#">Worship</a><span>/</span><span aria-current="page">Service Times</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Service Times -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Weekly Services</h2>
+                    <p>We'd love to see you at any of our gatherings!</p>
+                </div>
+
+                <!-- TODO: Update with actual service times -->
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-t-4 border-primary-700">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-2">Sunday Morning</h3>
+                        <p class="text-4xl font-bold text-primary-700 mb-2">10:00 AM</p>
+                        <p class="text-gray-600">Main Worship Service</p>
+                        <p class="text-sm text-gray-500 mt-4">Children's programs available during service</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-t-4 border-accent-600">
+                        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-2">Sunday School</h3>
+                        <p class="text-4xl font-bold text-primary-700 mb-2">9:00 AM</p>
+                        <p class="text-gray-600">Bible Study Classes</p>
+                        <p class="text-sm text-gray-500 mt-4">Classes for all ages</p>
+                    </div>
+
+                    <div class="bg-white rounded-xl p-8 shadow-lg text-center border-t-4 border-primary-700">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-serif font-bold text-xl mb-2">Wednesday Evening</h3>
+                        <p class="text-4xl font-bold text-primary-700 mb-2">7:00 PM</p>
+                        <p class="text-gray-600">Prayer & Bible Study</p>
+                        <p class="text-sm text-gray-500 mt-4">Youth & children's programs available</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="section section-gray">
+            <div class="container">
+                <div class="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
+                    <div>
+                        <h2 class="mb-4">Find Us</h2>
+                        <!-- TODO: Update with actual address -->
+                        <div class="bg-white rounded-xl p-6 shadow-md">
+                            <div class="flex items-start gap-4 mb-6">
+                                <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-primary-700 flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-lg">Address</h4>
+                                    <p class="text-gray-600">123 Church Street<br>Delmar, NY 12054</p>
+                                </div>
+                            </div>
+                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full">
+                                Get Directions
+                            </a>
+                        </div>
+
+                        <div class="mt-6">
+                            <h4 class="font-semibold mb-2">Parking</h4>
+                            <p class="text-gray-600">
+                                Free parking is available in our main lot. Accessible parking spaces are located near the main entrance.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- TODO: Add Google Maps embed or static map -->
+                        <div class="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
+                            <div class="text-center text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                </svg>
+                                <p>Map will be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Services -->
+        <section class="section section-light">
+            <div class="container container-sm">
+                <h2 class="text-center mb-8">Special Services</h2>
+                <div class="bg-accent-50 rounded-xl p-8">
+                    <p class="text-gray-700 mb-6">
+                        Throughout the year, we hold special services for holidays and church seasons.
+                        Check our <a href="/pages/events.html" class="text-primary-600 hover:underline">events calendar</a>
+                        for upcoming special services including:
+                    </p>
+                    <ul class="grid md:grid-cols-2 gap-4">
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-accent-600 rounded-full"></span>
+                            Easter Services
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-accent-600 rounded-full"></span>
+                            Christmas Eve Service
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-accent-600 rounded-full"></span>
+                            Good Friday Service
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="w-2 h-2 bg-accent-600 rounded-full"></span>
+                            Thanksgiving Service
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-primary">
+            <div class="container text-center">
+                <h2 class="mb-4">Planning Your First Visit?</h2>
+                <p class="text-lg opacity-90 max-w-2xl mx-auto mb-8">
+                    Learn what to expect when you visit Delmar Church of Nazarene.
+                </p>
+                <a href="/pages/worship/what-to-expect.html" class="btn btn-primary btn-lg">What to Expect</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="/en/" class="footer-logo"><img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-10 w-auto brightness-0 invert"><span class="font-serif font-bold">Delmar Church of Nazarene</span></a>
+                    <p>A welcoming community of faith where everyone belongs.</p>
+                </div>
+                <div class="footer-column"><h5>Quick Links</h5><ul><li><a href="/pages/about/our-story.html">About Us</a></li><li><a href="/pages/worship/service-times.html">Service Times</a></li><li><a href="/pages/sermons.html">Sermons</a></li><li><a href="/pages/give.html">Give</a></li></ul></div>
+                <div class="footer-column"><h5>Ministries</h5><ul><li><a href="/pages/ministries/youth.html">Youth</a></li><li><a href="/pages/ministries/children.html">Children</a></li><li><a href="/pages/ministries/outreach.html">Outreach</a></li></ul></div>
+                <div class="footer-column"><h5>Contact</h5><div class="footer-contact-item"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg><span>123 Church Street<br>Delmar, NY 12054</span></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Delmar Church of Nazarene. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/language-switcher.js"></script>
+</body>
+</html>

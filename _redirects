@@ -1,0 +1,9 @@
+# Netlify Redirects for Delmar Nazarene Church
+# =============================================
+# Simple redirect rules (netlify.toml has more detailed config)
+
+# Redirect root to English
+/  /en/  302
+
+# 404 fallback
+/*  /404.html  404

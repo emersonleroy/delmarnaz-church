@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give | Delmar Church of Nazarene</title>
+    <meta name="description" content="Support the ministry of Delmar Church of Nazarene through your generous giving. Give online, by text, in person, or by mail. Your generosity makes an eternal impact.">
+    <meta name="keywords" content="church giving, tithe, offering, donate, Delmar Church of Nazarene, online giving, ChurchTrac">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#E8F5E3', 100: '#D4E8C8', 200: '#B5D69E', 300: '#8FBF6E',
+                            400: '#72A84E', 500: '#5A9236', 600: '#4A7C2C', 700: '#3A6620',
+                            800: '#2D5016', 900: '#1A3009',
+                        },
+                        accent: {
+                            50: '#FCF6E8', 100: '#F8ECC8', 200: '#F2DBA4', 300: '#EAC97D',
+                            400: '#E0B85C', 500: '#D4A73F', 600: '#C4962C', 700: '#A8801A',
+                            800: '#8B6914', 900: '#6B4F0F',
+                        },
+                        cream: '#FAF7F2',
+                        'pale-green': '#E8F5E3',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <!-- Page-specific styles -->
+    <style>
+        /* ChurchTrac Widget Placeholder Styling */
+        .churchtrac-placeholder {
+            border: 3px dashed #4A7C2C;
+            background: linear-gradient(135deg, #E8F5E3 0%, #D4E8C8 100%);
+            border-radius: 12px;
+            padding: 40px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .churchtrac-placeholder .placeholder-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2D5016;
+            margin-bottom: 1rem;
+        }
+
+        .churchtrac-placeholder .placeholder-instructions {
+            font-size: 0.875rem;
+            color: #5C5C5C;
+            line-height: 1.8;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item {
+            border-bottom: 1px solid #E8E8E8;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #4A7C2C;
+        }
+
+        .faq-question.active {
+            color: #2D5016;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Bible verse callout */
+        .verse-callout {
+            background: white;
+            border-left: 4px solid #C4962C;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-cream">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="site-header">
+        <div class="header-top bg-primary-800">
+            <div class="container flex justify-between items-center text-sm py-2">
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="tel:+13028462899" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>(302) 846-2899</span>
+                    </a>
+                    <a href="mailto:office@delmarnaz.com" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>office@delmarnaz.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 ml-auto">
+                    <span class="text-white/90">Sunday Worship: 10:30 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main bg-white shadow-sm">
+            <div class="nav-container">
+                <a href="/en/" class="site-logo flex items-center gap-3">
+                    <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 md:h-14 w-auto" loading="eager">
+                    <div class="site-logo-text text-primary-800 hidden sm:block">
+                        Delmar Church
+                        <span class="text-primary-600">of Nazarene</span>
+                    </div>
+                </a>
+
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="/en/" class="nav-link">Home</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">About</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/about/our-story.html">Our Story</a>
+                                <a href="/pages/about/our-beliefs.html">Our Beliefs</a>
+                                <a href="/pages/about/mission-vision.html">Mission & Vision</a>
+                                <a href="/pages/about/staff.html">Staff</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Ministries</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/ministries/youth.html">Youth Ministry</a>
+                                <a href="/pages/ministries/children.html">Children's Ministry</a>
+                                <a href="/pages/ministries/outreach.html">Outreach</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Worship</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/worship/service-times.html">Service Times</a>
+                                <a href="/pages/worship/what-to-expect.html">What to Expect</a>
+                                <a href="/pages/worship/livestream.html">Watch Live</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/pages/sermons.html" class="nav-link">Sermons</a></li>
+                        <li class="nav-item"><a href="/pages/events.html" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="/pages/give.html" class="nav-link active">Give</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Connect</a>
+                            <div class="nav-dropdown">
+                                <a href="/pages/connect/new-here.html">New Here?</a>
+                                <a href="/pages/connect/prayer-requests.html">Prayer Requests</a>
+                                <a href="/pages/connect/contact.html">Contact Us</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn disabled" data-lang="ht">HT</button>
+                        <button class="lang-btn disabled" data-lang="fr">FR</button>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="/en/" class="site-logo flex items-center gap-2">
+                <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-10 w-auto">
+                <span class="font-serif font-bold text-primary-800 text-sm">Delmar Church of Nazarene</span>
+            </a>
+            <button class="mobile-nav-close" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/pages/about/our-story.html">About</a></li>
+            <li><a href="/pages/ministries/youth.html">Ministries</a></li>
+            <li><a href="/pages/worship/service-times.html">Worship</a></li>
+            <li><a href="/pages/sermons.html">Sermons</a></li>
+            <li><a href="/pages/events.html">Events</a></li>
+            <li><a href="/pages/give.html" class="text-accent-600 font-semibold">Give</a></li>
+            <li><a href="/pages/connect/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main-content">
+
+        <!-- ============================================
+             HERO SECTION
+             ============================================ -->
+        <section class="relative min-h-[60vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <!-- Background Image Placeholder -->
+            <div class="absolute inset-0 z-0">
+                <!-- TODO: Add image of worship, hands raised, or community serving -->
+                <!-- Recommended: 1920x1080 or larger, people worshiping or serving -->
+                <div class="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700"></div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-br from-primary-900/90 via-primary-800/85 to-primary-700/80"></div>
+
+            <!-- Content -->
+            <div class="relative z-20 max-w-4xl px-4 py-16">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4 text-white">Give</h1>
+                <p class="text-xl md:text-2xl text-primary-100 mb-6">Your generosity makes a difference in our community and beyond</p>
+
+                <!-- Bible Verse -->
+                <blockquote class="text-lg md:text-xl italic text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+                    "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."
+                    <footer class="text-accent-400 mt-2 not-italic font-medium">— 2 Corinthians 9:7</footer>
+                </blockquote>
+
+                <a href="#online-giving" class="btn btn-lg bg-accent-600 hover:bg-accent-500 text-primary-900 font-bold border-2 border-accent-600 hover:border-accent-500 shadow-lg transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Give Online Now
+                </a>
+
+                <!-- Breadcrumb -->
+                <nav class="mt-8 text-sm text-white/70">
+                    <a href="/en/" class="hover:text-white">Home</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white">Give</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WHY WE GIVE SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-cream">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-6">Why We Give</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Giving is an act of worship and a tangible way to participate in God's work. Your generous gifts support our ministries, enable us to serve our community, spread the Gospel, and maintain our facilities. Every contribution, no matter the size, makes an eternal impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WAYS TO GIVE SECTION
+             ============================================ -->
+        <section id="online-giving" class="py-16 md:py-24 bg-white scroll-mt-20">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">Ways to Give</h2>
+                    <p class="text-lg text-gray-600">Choose the method that works best for you</p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                    <!-- CARD 1: Online Giving (Featured) -->
+                    <div class="bg-pale-green rounded-2xl border-2 border-primary-600 shadow-lg overflow-hidden flex flex-col">
+                        <div class="bg-primary-800 text-white text-center py-2 text-sm font-semibold">
+                            RECOMMENDED
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col">
+                            <!-- Icon -->
+                            <div class="w-16 h-16 bg-primary-700 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-primary-900 text-center mb-3">Give Online</h3>
+                            <p class="text-gray-600 text-center mb-6">
+                                Safe, secure, and convenient online giving through our giving platform. Set up one-time or recurring gifts.
+                            </p>
+
+                            <!-- CHURCHTRAC GIVING WIDGET PLACEHOLDER -->
+                            <div id="churchtrac-widget-container" class="churchtrac-placeholder mb-6">
+                                <div class="placeholder-content">
+                                    <p class="placeholder-text">ChurchTrac Giving Widget Goes Here</p>
+                                    <p class="placeholder-instructions">
+                                        To add the ChurchTrac widget:<br>
+                                        1. Log into your ChurchTrac account<br>
+                                        2. Go to: Giving → Online Giving → Settings<br>
+                                        3. Copy the embed code<br>
+                                        4. Replace this placeholder div with the embed code
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- END CHURCHTRAC PLACEHOLDER -->
+
+                            <div class="mt-auto">
+                                <button onclick="alert('Coming soon - ChurchTrac integration will be added here.')" class="btn w-full bg-primary-800 hover:bg-primary-700 text-white font-bold py-3 rounded-lg transition-all">
+                                    Give Online Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 2: Text to Give -->
+                    <div class="bg-pale-green rounded-2xl border-2 border-primary-200 shadow-md overflow-hidden flex flex-col">
+                        <div class="p-8 flex-1 flex flex-col">
+                            <!-- Icon -->
+                            <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-primary-900 text-center mb-3">Text to Give</h3>
+                            <p class="text-gray-600 text-center mb-6">
+                                Quick and easy mobile giving. Text your gift amount to our dedicated giving number.
+                            </p>
+
+                            <div class="bg-white rounded-xl p-6 text-center mb-6 flex-1">
+                                <p class="text-primary-800 font-bold text-lg mb-2">Text Giving Number:</p>
+                                <!-- TODO: Add text-to-give phone number here when available -->
+                                <p class="text-2xl font-bold text-accent-600 mb-4">Coming Soon</p>
+                                <p class="text-sm text-gray-500">
+                                    Setup instructions will be provided once ChurchTrac is configured
+                                </p>
+                            </div>
+
+                            <div class="mt-auto">
+                                <p class="text-center text-gray-500 text-sm">
+                                    Text giving will be available after ChurchTrac setup
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CARD 3: In-Person -->
+                    <div class="bg-pale-green rounded-2xl border-2 border-primary-200 shadow-md overflow-hidden flex flex-col">
+                        <div class="p-8 flex-1 flex flex-col">
+                            <!-- Icon -->
+                            <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                </svg>
+                            </div>
+
+                            <h3 class="font-serif text-2xl font-bold text-primary-900 text-center mb-3">Give During Service</h3>
+                            <p class="text-gray-600 text-center mb-6">
+                                You can give in person during any of our worship services.
+                            </p>
+
+                            <div class="bg-white rounded-xl p-6 mb-6 flex-1">
+                                <h4 class="font-bold text-primary-800 mb-4 text-center">Service Times</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-gray-700">Sunday School</span>
+                                        <span class="font-bold text-primary-700">9:00 AM</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-gray-700">Sunday Worship</span>
+                                        <span class="font-bold text-primary-700">10:30 AM</span>
+                                    </li>
+                                    <li class="flex justify-between items-center">
+                                        <span class="text-gray-700">Wed. Bible Study</span>
+                                        <span class="font-bold text-primary-700">6:00 PM</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p class="text-sm text-gray-500 text-center mb-4">
+                                Offering plates are available during our services, or you can give at the Welcome Center
+                            </p>
+
+                            <div class="mt-auto">
+                                <a href="/pages/worship/service-times.html" class="btn w-full bg-primary-700 hover:bg-primary-600 text-white font-bold py-3 rounded-lg transition-all text-center block">
+                                    View Service Times
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             FAQ SECTION
+             ============================================ -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">Giving FAQs</h2>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item py-4">
+                        <button class="faq-question w-full flex items-center justify-between text-left" onclick="toggleFAQ(this)">
+                            <span class="font-bold text-lg text-primary-900 pr-4">Is my online gift secure?</span>
+                            <span class="faq-icon text-2xl text-primary-600 flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer text-gray-600 pt-4">
+                            Yes! We use ChurchTrac's secure giving platform which employs bank-level encryption to protect your information. Your financial data is never stored on our website.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item py-4">
+                        <button class="faq-question w-full flex items-center justify-between text-left" onclick="toggleFAQ(this)">
+                            <span class="font-bold text-lg text-primary-900 pr-4">Can I set up recurring gifts?</span>
+                            <span class="faq-icon text-2xl text-primary-600 flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer text-gray-600 pt-4">
+                            Absolutely! Our online giving platform allows you to schedule recurring gifts weekly, bi-weekly, or monthly. This is a convenient way to make giving a regular part of your worship.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item py-4">
+                        <button class="faq-question w-full flex items-center justify-between text-left" onclick="toggleFAQ(this)">
+                            <span class="font-bold text-lg text-primary-900 pr-4">Will I receive a tax receipt?</span>
+                            <span class="faq-icon text-2xl text-primary-600 flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer text-gray-600 pt-4">
+                            Yes, all gifts are tax-deductible. You will receive a year-end giving statement for tax purposes. Online gifts receive immediate email confirmation.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item py-4">
+                        <button class="faq-question w-full flex items-center justify-between text-left" onclick="toggleFAQ(this)">
+                            <span class="font-bold text-lg text-primary-900 pr-4">Can I designate my gift to a specific ministry?</span>
+                            <span class="faq-icon text-2xl text-primary-600 flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer text-gray-600 pt-4">
+                            Yes! When giving online, you can designate your gift to specific ministries or funds. If giving by check, please note your designation in the memo line.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item py-4">
+                        <button class="faq-question w-full flex items-center justify-between text-left" onclick="toggleFAQ(this)">
+                            <span class="font-bold text-lg text-primary-900 pr-4">What if I have questions about my giving?</span>
+                            <span class="faq-icon text-2xl text-primary-600 flex-shrink-0">+</span>
+                        </button>
+                        <div class="faq-answer text-gray-600 pt-4">
+                            Please contact our church office at <a href="tel:+13028462899" class="text-primary-700 hover:text-accent-600 font-medium">(302) 846-2899</a> or email <a href="mailto:office@delmarnaz.com" class="text-primary-700 hover:text-accent-600 font-medium">office@delmarnaz.com</a>. We're here to help!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BIBLICAL FOUNDATION SECTION
+             ============================================ -->
+        <section class="py-16 md:py-24 bg-pale-green">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-6">The Heart of Giving</h2>
+                        <p class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                            Giving is more than a financial transaction—it's an act of worship, trust, and gratitude. When we give, we acknowledge that everything we have comes from God and we participate in His work of building His kingdom.
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Verse 1 -->
+                        <div class="verse-callout">
+                            <blockquote class="text-lg italic text-gray-700 mb-2">
+                                "Honor the LORD with your wealth, with the firstfruits of all your crops."
+                            </blockquote>
+                            <footer class="text-accent-700 font-semibold">— Proverbs 3:9</footer>
+                        </div>
+
+                        <!-- Verse 2 -->
+                        <div class="verse-callout">
+                            <blockquote class="text-lg italic text-gray-700 mb-2">
+                                "Remember this: Whoever sows sparingly will also reap sparingly, and whoever sows generously will also reap generously."
+                            </blockquote>
+                            <footer class="text-accent-700 font-semibold">— 2 Corinthians 9:6</footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CALL-TO-ACTION SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-primary-800 relative overflow-hidden">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Ready to Make a Difference?</h2>
+                    <p class="text-xl text-primary-100 mb-10">Your generosity impacts lives and advances God's kingdom</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#online-giving" class="btn btn-lg bg-accent-600 hover:bg-accent-500 text-primary-900 font-bold border-2 border-accent-600 hover:border-accent-500 shadow-xl transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Give Online
+                        </a>
+                        <a href="/pages/connect/contact.html" class="btn btn-lg bg-transparent hover:bg-white/10 text-white font-bold border-2 border-white shadow-xl transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-primary-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- Contact Info Column -->
+                <div>
+                    <a href="/en/" class="flex items-center gap-3 mb-6">
+                        <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 w-auto brightness-0 invert">
+                        <span class="font-serif font-bold text-xl">Delmar Church<br><span class="text-primary-300 text-sm font-normal">of Nazarene</span></span>
+                    </a>
+                    <div class="space-y-3 text-primary-200">
+                        <p class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>36926 Hideaway Ln<br>Delmar, DE 19940</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="tel:+13028462899" class="hover:text-white transition-colors">(302) 846-2899</a>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:office@delmarnaz.com" class="hover:text-white transition-colors">office@delmarnaz.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="/pages/about/our-story.html" class="text-primary-200 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/pages/ministries/youth.html" class="text-primary-200 hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/pages/events.html" class="text-primary-200 hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/pages/sermons.html" class="text-primary-200 hover:text-white transition-colors">Sermons</a></li>
+                        <li><a href="/pages/give.html" class="text-primary-200 hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/pages/connect/contact.html" class="text-primary-200 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Times Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Service Times</h5>
+                    <ul class="space-y-3 text-primary-200">
+                        <li class="flex justify-between">
+                            <span>Sunday School:</span>
+                            <span class="text-accent-400 font-semibold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Sunday Worship:</span>
+                            <span class="text-accent-400 font-semibold">10:30 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Wed. Bible Study:</span>
+                            <span class="text-accent-400 font-semibold">6:00 PM</span>
+                        </li>
+                    </ul>
+                    <a href="/pages/worship/livestream.html" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 mt-4 font-semibold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        Watch Live
+                    </a>
+                </div>
+
+                <!-- Connect Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Connect With Us</h5>
+                    <div class="flex gap-3 mb-6">
+                        <!-- TODO: Add actual Facebook URL -->
+                        <a href="#" aria-label="Facebook" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                            </svg>
+                        </a>
+                        <!-- TODO: Add actual YouTube URL -->
+                        <a href="#" aria-label="YouTube" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Join us this Sunday!<br>
+                        We'd love to meet you.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-primary-400">&copy; 2025 Delmar Church of Nazarene. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top fixed bottom-8 right-8 w-12 h-12 bg-primary-700 text-white rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 z-50" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/language-switcher.js"></script>
+
+    <!-- FAQ Accordion Script -->
+    <script>
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+
+            // Close all FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('open');
+            });
+            document.querySelectorAll('.faq-question').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // If this one wasn't open, open it
+            if (!isOpen) {
+                answer.classList.add('open');
+                button.classList.add('active');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Back to top button visibility */
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</body>
+</html>
