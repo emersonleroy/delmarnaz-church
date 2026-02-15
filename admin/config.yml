@@ -1,175 +1,407 @@
-# Decap CMS Configuration
-# =======================
-# This file configures Decap CMS (formerly Netlify CMS) for content management.
-#
-# SETUP INSTRUCTIONS:
-# 1. Enable Netlify Identity on your Netlify site
-# 2. Enable Git Gateway in Netlify Identity settings
-# 3. Create an admin/index.html file to load the CMS (see below)
-# 4. Invite users through Netlify Identity
-#
-# For more info: https://decapcms.org/docs/
+# ============================================
+# DECAP CMS CONFIGURATION
+# Delmar Church of Nazarene
+# ============================================
+# This file configures the content management system
+# for editing events, sermons, announcements, and staff.
+# ============================================
 
+# Backend Configuration
 backend:
   name: git-gateway
-  branch: main # Branch to update (change if using a different branch)
+  branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
 
-# Media files configuration
-media_folder: "assets/images/uploads" # Where uploaded media will be stored
-public_folder: "/assets/images/uploads" # Public path to media files
+# Editorial Workflow (Draft → Review → Publish)
+publish_mode: editorial_workflow
 
-# Site URL (update with your actual domain)
-site_url: https://delmarnazarene.org
-display_url: https://delmarnazarene.org
+# Site Configuration
+site_url: https://delmarnaz.netlify.app
+display_url: https://delmarnaz.netlify.app
+logo_url: /assets/images/church-logo.png
 
-# Logo for the CMS
-logo_url: /assets/images/logo.png
+# Media/Image Settings
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
-# Slug configuration
+# Slug (URL) Configuration
 slug:
   encoding: "ascii"
   clean_accents: true
   sanitize_replacement: "-"
 
-# Collections (content types)
+# ============================================
+# COLLECTIONS
+# ============================================
+
 collections:
-  # Blog Posts
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "_posts/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Author", name: "author", widget: "string", default: "Delmar Nazarene Church" }
-      - { label: "Category", name: "category", widget: "select", options: ["News", "Devotional", "Announcements", "Testimony"] }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
 
-  # Sermons
-  - name: "sermons"
-    label: "Sermons"
-    folder: "_posts/sermons"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date Preached", name: "date", widget: "datetime" }
-      - { label: "Speaker", name: "speaker", widget: "string" }
-      - { label: "Scripture Reference", name: "scripture", widget: "string", required: false }
-      - { label: "Series", name: "series", widget: "string", required: false }
-      - { label: "Thumbnail Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Video URL (YouTube/Vimeo)", name: "video_url", widget: "string", required: false }
-      - { label: "Audio URL", name: "audio_url", widget: "string", required: false }
-      - { label: "Summary", name: "summary", widget: "text" }
-      - { label: "Notes/Outline", name: "body", widget: "markdown", required: false }
-
-  # Events
+  # ==========================================
+  # EVENTS COLLECTION
+  # ==========================================
   - name: "events"
     label: "Events"
-    folder: "_posts/events"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Event Name", name: "title", widget: "string" }
-      - { label: "Event Date", name: "event_date", widget: "datetime" }
-      - { label: "End Date (if multi-day)", name: "end_date", widget: "datetime", required: false }
-      - { label: "Location", name: "location", widget: "string" }
-      - { label: "Featured Image", name: "image", widget: "image", required: false }
-      - { label: "Category", name: "category", widget: "select", options: ["Worship", "Youth", "Children", "Outreach", "Fellowship", "Special"] }
-      - { label: "Description", name: "body", widget: "markdown" }
-      - { label: "Registration URL", name: "registration_url", widget: "string", required: false }
-      - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
-
-  # Staff/Leadership
-  - name: "staff"
-    label: "Staff & Leadership"
-    folder: "_data/staff"
+    label_singular: "Event"
+    description: "Church events, activities, and gatherings. Add upcoming events here."
+    folder: "content/events/en"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} - {{date | date('MMM D, YYYY')}}"
+    sortable_fields: ['date', 'title']
+    view_filters:
+      - label: "Upcoming Events"
+        field: date
+        pattern: "2024|2025|2026"
+    view_groups:
+      - label: "Year"
+        field: date
+        pattern: '\d{4}'
     fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - { label: "Title/Role", name: "title", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image", required: false }
-      - { label: "Email", name: "email", widget: "string", required: false }
-      - { label: "Bio", name: "bio", widget: "markdown" }
-      - { label: "Order (for sorting)", name: "order", widget: "number", default: 0 }
-      - { label: "Category", name: "category", widget: "select", options: ["Pastoral Staff", "Ministry Leaders", "Board Members"] }
+      - label: "Event Name"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "The name of the event (e.g., 'Easter Sunday Service', 'Youth Lock-In')"
 
-  # Pages (for editing existing static pages)
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "_data/pages/home.yml"
-        fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "text" }
-          - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
-          - { label: "Welcome Section Title", name: "welcome_title", widget: "string" }
-          - { label: "Welcome Section Text", name: "welcome_text", widget: "markdown" }
+      - label: "Event Date & Start Time"
+        name: "date"
+        widget: "datetime"
+        required: true
+        date_format: "MMMM D, YYYY"
+        time_format: "h:mm A"
+        hint: "When does the event start?"
 
-      - label: "About - Our Story"
-        name: "our-story"
-        file: "_data/pages/our-story.yml"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "markdown" }
-          - { label: "Timeline Events", name: "timeline", widget: "list", fields: [
-              { label: "Year", name: "year", widget: "string" },
-              { label: "Title", name: "title", widget: "string" },
-              { label: "Description", name: "description", widget: "text" }
-            ]}
+      - label: "End Date & Time"
+        name: "end_date"
+        widget: "datetime"
+        required: false
+        date_format: "MMMM D, YYYY"
+        time_format: "h:mm A"
+        hint: "Optional: When does the event end? Leave blank for single-time events."
 
-  # Site Settings
-  - name: "settings"
-    label: "Site Settings"
-    files:
-      - label: "General Settings"
-        name: "general"
-        file: "_data/settings/general.yml"
-        fields:
-          - { label: "Church Name", name: "church_name", widget: "string" }
-          - { label: "Tagline", name: "tagline", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Address Line 1", name: "address1", widget: "string" }
-          - { label: "Address Line 2", name: "address2", widget: "string" }
-          - { label: "City, State ZIP", name: "city_state_zip", widget: "string" }
+      - label: "Time Display"
+        name: "time_display"
+        widget: "string"
+        required: false
+        hint: "Optional: Custom time display (e.g., '6:00 PM - 8:00 PM' or 'All Day')"
 
-      - label: "Service Times"
-        name: "services"
-        file: "_data/settings/services.yml"
-        fields:
-          - { label: "Services", name: "services", widget: "list", fields: [
-              { label: "Service Name", name: "name", widget: "string" },
-              { label: "Day", name: "day", widget: "string" },
-              { label: "Time", name: "time", widget: "string" },
-              { label: "Description", name: "description", widget: "string", required: false }
-            ]}
+      - label: "Location"
+        name: "location"
+        widget: "string"
+        default: "Delmar Church of Nazarene"
+        required: true
+        hint: "Where is the event? Use church name or specific address."
 
-      - label: "Social Media"
-        name: "social"
-        file: "_data/settings/social.yml"
-        fields:
-          - { label: "Facebook URL", name: "facebook", widget: "string", required: false }
-          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
-          - { label: "YouTube URL", name: "youtube", widget: "string", required: false }
-          - { label: "Twitter/X URL", name: "twitter", widget: "string", required: false }
+      - label: "Featured Image"
+        name: "image"
+        widget: "image"
+        required: false
+        allow_multiple: false
+        hint: "Optional: Add an image for this event (recommended size: 1200x630px)"
 
-# NOTE: To complete CMS setup, create admin/index.html with the following content:
-# <!DOCTYPE html>
-# <html>
-# <head>
-#   <meta charset="utf-8" />
-#   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-#   <title>Content Manager | Delmar Nazarene Church</title>
-#   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-# </head>
-# <body>
-#   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-# </body>
-# </html>
+      - label: "Description"
+        name: "description"
+        widget: "markdown"
+        required: true
+        hint: "Describe the event. What should attendees know? What to bring?"
+
+      - label: "Registration Link"
+        name: "registration_url"
+        widget: "string"
+        required: false
+        hint: "Optional: Link to registration form or signup page"
+
+      - label: "Contact Person"
+        name: "contact_person"
+        widget: "string"
+        default: "Church Office"
+        required: false
+        hint: "Who should people contact for more info?"
+
+      - label: "Contact Email"
+        name: "contact_email"
+        widget: "string"
+        default: "office@delmarnaz.com"
+        required: false
+        pattern: ['^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', 'Please enter a valid email address']
+        hint: "Email address for questions about this event"
+
+      - label: "Featured Event"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        hint: "Feature this event prominently on the homepage?"
+
+  # ==========================================
+  # SERMONS COLLECTION
+  # ==========================================
+  - name: "sermons"
+    label: "Sermons"
+    label_singular: "Sermon"
+    description: "Weekly sermons and messages. Add sermon recordings and notes here."
+    folder: "content/sermons/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} - {{speaker}} ({{date | date('MMM D, YYYY')}})"
+    sortable_fields: ['date', 'title', 'speaker']
+    view_filters:
+      - label: "Pastor Charles"
+        field: speaker
+        pattern: "Pastor Charles Leroy"
+    view_groups:
+      - label: "Series"
+        field: series
+      - label: "Speaker"
+        field: speaker
+    fields:
+      - label: "Sermon Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "The title of the sermon message"
+
+      - label: "Date Preached"
+        name: "date"
+        widget: "datetime"
+        required: true
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        hint: "When was this sermon delivered?"
+
+      - label: "Speaker"
+        name: "speaker"
+        widget: "string"
+        default: "Pastor Charles Leroy"
+        required: true
+        hint: "Who delivered this message?"
+
+      - label: "Scripture Reference"
+        name: "scripture"
+        widget: "string"
+        required: false
+        hint: "Main scripture passage (e.g., 'John 3:16-21' or 'Psalm 23')"
+
+      - label: "Sermon Series"
+        name: "series"
+        widget: "string"
+        required: false
+        hint: "Optional: Is this part of a sermon series? Enter the series name."
+
+      - label: "YouTube Video URL"
+        name: "youtube_url"
+        widget: "string"
+        required: true
+        pattern: ['^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\/.+$', 'Please enter a valid YouTube URL']
+        hint: "Full YouTube URL (e.g., https://www.youtube.com/watch?v=xxxxx)"
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: true
+        hint: "Brief summary of the sermon (2-3 sentences)"
+
+      - label: "Audio URL"
+        name: "audio_url"
+        widget: "string"
+        required: false
+        hint: "Optional: Direct link to audio file (MP3) if available"
+
+      - label: "Sermon Notes & Resources"
+        name: "notes"
+        widget: "markdown"
+        required: false
+        hint: "Optional: Sermon outline, discussion questions, or additional resources"
+
+      - label: "Thumbnail Image"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Optional: Custom thumbnail (otherwise YouTube thumbnail will be used)"
+
+  # ==========================================
+  # ANNOUNCEMENTS COLLECTION
+  # ==========================================
+  - name: "announcements"
+    label: "Announcements"
+    label_singular: "Announcement"
+    description: "Church announcements and updates. These can be displayed on the homepage or announcement pages."
+    folder: "content/announcements/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} ({{priority}}) - {{date | date('MMM D, YYYY')}}"
+    sortable_fields: ['date', 'priority', 'title']
+    view_filters:
+      - label: "High Priority"
+        field: priority
+        pattern: "high"
+      - label: "Church-wide"
+        field: category
+        pattern: "church-wide"
+    view_groups:
+      - label: "Priority"
+        field: priority
+      - label: "Category"
+        field: category
+    fields:
+      - label: "Announcement Title"
+        name: "title"
+        widget: "string"
+        required: true
+        hint: "Clear, attention-grabbing title for the announcement"
+
+      - label: "Date Posted"
+        name: "date"
+        widget: "datetime"
+        required: true
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        hint: "When is this announcement being posted?"
+
+      - label: "Priority Level"
+        name: "priority"
+        widget: "select"
+        options:
+          - { label: "High - Urgent/Important", value: "high" }
+          - { label: "Normal - Regular announcement", value: "normal" }
+          - { label: "Low - FYI only", value: "low" }
+        default: "normal"
+        required: true
+        hint: "High priority announcements may be featured more prominently"
+
+      - label: "Display Until"
+        name: "display_until"
+        widget: "datetime"
+        required: false
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        hint: "Optional: When should this announcement stop displaying? Leave blank to show indefinitely."
+
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Church-wide", value: "church-wide" }
+          - { label: "Ministry Update", value: "ministry" }
+          - { label: "Event Related", value: "event" }
+          - { label: "Prayer Request", value: "prayer" }
+          - { label: "Other", value: "other" }
+        default: "church-wide"
+        required: true
+        hint: "What type of announcement is this?"
+
+      - label: "Content"
+        name: "content"
+        widget: "markdown"
+        required: true
+        hint: "The full announcement content. Be clear and include all relevant details."
+
+      - label: "More Info Link"
+        name: "link"
+        widget: "string"
+        required: false
+        hint: "Optional: Link to more information, signup form, or related page"
+
+      - label: "Link Text"
+        name: "link_text"
+        widget: "string"
+        required: false
+        default: "Learn More"
+        hint: "Text to display for the link button"
+
+      - label: "Image"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Optional: Add an image to make the announcement more eye-catching"
+
+  # ==========================================
+  # STAFF & LEADERSHIP COLLECTION
+  # ==========================================
+  - name: "staff"
+    label: "Staff & Leadership"
+    label_singular: "Staff Member"
+    description: "Church staff and leadership team. These profiles appear on the Staff page."
+    folder: "content/staff/en"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{name}} - {{position}}"
+    sortable_fields: ['display_order', 'name', 'staff_type']
+    view_groups:
+      - label: "Staff Type"
+        field: staff_type
+    fields:
+      - label: "Full Name"
+        name: "name"
+        widget: "string"
+        required: true
+        hint: "Staff member's full name"
+
+      - label: "Title/Position"
+        name: "position"
+        widget: "string"
+        required: true
+        hint: "Their role at the church (e.g., 'Senior Pastor', 'Youth Director')"
+
+      - label: "Staff Type"
+        name: "staff_type"
+        widget: "select"
+        options:
+          - { label: "Senior Pastor", value: "senior-pastor" }
+          - { label: "Associate Pastor", value: "associate-pastor" }
+          - { label: "Worship Leader", value: "worship-leader" }
+          - { label: "Ministry Director", value: "ministry-director" }
+          - { label: "Office Staff", value: "office-staff" }
+          - { label: "Board Member", value: "board-member" }
+          - { label: "Other", value: "other" }
+        default: "other"
+        required: true
+        hint: "Category for organizing staff on the page"
+
+      - label: "Photo"
+        name: "photo"
+        widget: "image"
+        required: true
+        hint: "Professional headshot photo (recommended: square, at least 400x400px)"
+
+      - label: "Email Address"
+        name: "email"
+        widget: "string"
+        required: false
+        pattern: ['^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', 'Please enter a valid email address']
+        hint: "Optional: Public email for this staff member"
+
+      - label: "Phone Number"
+        name: "phone"
+        widget: "string"
+        required: false
+        hint: "Optional: Contact phone number"
+
+      - label: "Biography"
+        name: "bio"
+        widget: "markdown"
+        required: true
+        hint: "Brief biography - background, family, passions, how long at the church, etc."
+
+      - label: "Display Order"
+        name: "display_order"
+        widget: "number"
+        default: 10
+        value_type: "int"
+        min: 1
+        max: 100
+        hint: "Order on the staff page (lower numbers appear first). Senior Pastor = 1, etc."
+
+      - label: "Show on Homepage"
+        name: "show_on_homepage"
+        widget: "boolean"
+        default: false
+        hint: "Feature this staff member on the homepage?"
+
+# ============================================
+# END OF CONFIGURATION
+# ============================================
