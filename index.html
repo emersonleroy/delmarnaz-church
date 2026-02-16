@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=/en/">
+    <!-- Note: meta refresh removed - handled by JS to preserve hash tokens -->
     <title>Delmar Church of Nazarene - Redirecting...</title>
 
     <!-- SEO Meta Tags -->
@@ -12,6 +12,9 @@
 
     <!-- Favicon (add your favicon files to assets/images/) -->
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+    <!-- Netlify Identity Widget - needed to handle invite/recovery tokens -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <style>
         /* Simple loading styles while redirect happens */
@@ -22,7 +25,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 100%);
+            background: linear-gradient(135deg, #2D5016 0%, #4A7C2C 100%);
             color: white;
         }
         .loader {
@@ -53,66 +56,44 @@
          * Language Detection and Redirect Script
          * =======================================
          *
-         * CURRENT BEHAVIOR (Phase 1):
-         * - Redirects all visitors to English (/en/)
-         *
-         * FUTURE BEHAVIOR (Phase 2 & 3):
-         * - Uncomment the language detection code below
-         * - Will detect browser language and redirect accordingly
-         * - Supports: English (en), Haitian Creole (ht), French (fr)
+         * IMPORTANT: This script checks for Netlify Identity tokens FIRST
+         * before redirecting, to handle invite/confirmation/recovery links.
          */
 
-        // Supported languages configuration
-        const SUPPORTED_LANGUAGES = {
-            'en': '/en/',      // English - Active
-            // 'ht': '/ht/',   // Haitian Creole - Phase 2
-            // 'fr': '/fr/'    // French - Phase 3
-        };
-
-        const DEFAULT_LANGUAGE = 'en';
-
-        /**
-         * FUTURE: Language Detection Function
-         * Uncomment this when Haitian Creole and French versions are ready
-         */
-        /*
-        function detectLanguage() {
-            // Check for saved language preference
-            const savedLang = localStorage.getItem('preferred-language');
-            if (savedLang && SUPPORTED_LANGUAGES[savedLang]) {
-                return savedLang;
+        // Check if URL contains Netlify Identity tokens
+        function hasIdentityToken() {
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                return hash.includes('confirmation_token') ||
+                       hash.includes('recovery_token') ||
+                       hash.includes('invite_token');
             }
-
-            // Check browser language settings
-            const browserLangs = navigator.languages || [navigator.language || navigator.userLanguage];
-
-            for (const lang of browserLangs) {
-                // Get the primary language code (e.g., 'en-US' -> 'en')
-                const primaryLang = lang.split('-')[0].toLowerCase();
-
-                // Special handling for Haitian Creole variants
-                if (lang.toLowerCase().includes('ht') || lang.toLowerCase().includes('haitian')) {
-                    return 'ht';
-                }
-
-                // Check if we support this language
-                if (SUPPORTED_LANGUAGES[primaryLang]) {
-                    return primaryLang;
-                }
-            }
-
-            return DEFAULT_LANGUAGE;
+            return false;
         }
 
-        // Perform language-based redirect
-        const detectedLang = detectLanguage();
-        window.location.replace(SUPPORTED_LANGUAGES[detectedLang]);
-        */
+        // If there's an identity token, handle it instead of redirecting
+        if (hasIdentityToken()) {
+            console.log('Identity token detected - handling invite/confirmation...');
 
-        // CURRENT: Simple redirect to English
-        // The meta refresh above handles this, but JS provides faster redirect
-        if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
-            window.location.replace('/en/');
+            // Initialize and open the Netlify Identity widget
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.init();
+
+                // Open the widget to show password setup form
+                setTimeout(function() {
+                    window.netlifyIdentity.open();
+                }, 100);
+
+                // After login, redirect to admin
+                window.netlifyIdentity.on("login", function() {
+                    document.location.href = "/admin/";
+                });
+            }
+        } else {
+            // No identity token - proceed with normal redirect to English site
+            if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+                window.location.replace('/en/');
+            }
         }
     </script>
 
