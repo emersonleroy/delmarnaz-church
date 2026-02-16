@@ -90,38 +90,30 @@
             }, 2000);
         });
 
-        // Handle Netlify Identity confirmation and recovery tokens
-        // This checks for #confirmation_token or #recovery_token in the URL
-        if (window.location.hash) {
-            const hash = window.location.hash.substring(1);
-            const params = new URLSearchParams(hash);
-
-            // Check for confirmation token (email verification)
-            if (params.has('confirmation_token')) {
-                console.log('Confirmation token detected');
-                // The Netlify Identity widget will handle this automatically
+        // Detect if we have any identity tokens in the URL
+        function hasIdentityToken() {
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                return hash.includes('confirmation_token') ||
+                       hash.includes('recovery_token') ||
+                       hash.includes('invite_token');
             }
-
-            // Check for recovery token (password reset)
-            if (params.has('recovery_token')) {
-                console.log('Recovery token detected');
-                // The Netlify Identity widget will handle this automatically
-            }
-
-            // Check for invite token (new user invitation)
-            if (params.has('invite_token')) {
-                console.log('Invite token detected');
-                // The Netlify Identity widget will handle this automatically
-            }
+            return false;
         }
 
         // Netlify Identity widget initialization and redirect handling
         if (window.netlifyIdentity) {
-            // Initialize the widget
-            window.netlifyIdentity.init({
-                container: '#netlify-identity-modal', // Optional: mount to specific element
-                locale: 'en' // Set language
-            });
+            // Initialize the widget first
+            window.netlifyIdentity.init();
+
+            // If there's an identity token in the URL, open the widget immediately
+            if (hasIdentityToken()) {
+                console.log('Identity token detected, opening widget...');
+                // Small delay to ensure widget is fully initialized
+                setTimeout(function() {
+                    window.netlifyIdentity.open();
+                }, 100);
+            }
 
             window.netlifyIdentity.on("init", user => {
                 if (!user) {

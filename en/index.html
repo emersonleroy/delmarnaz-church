@@ -978,10 +978,33 @@
         </svg>
     </button>
 
-    <!-- Netlify Identity Widget (for CMS login) -->
+    <!-- Netlify Identity Widget (for CMS login and invite handling) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script>
+        // Detect if we have any identity tokens in the URL (invite, confirmation, recovery)
+        function hasIdentityToken() {
+            if (window.location.hash) {
+                const hash = window.location.hash.substring(1);
+                return hash.includes('confirmation_token') ||
+                       hash.includes('recovery_token') ||
+                       hash.includes('invite_token');
+            }
+            return false;
+        }
+
         if (window.netlifyIdentity) {
+            // Initialize the widget
+            window.netlifyIdentity.init();
+
+            // If there's an identity token in the URL, open the widget immediately
+            // This handles invite links, confirmation links, and password reset links
+            if (hasIdentityToken()) {
+                console.log('Identity token detected, opening widget for password setup...');
+                setTimeout(function() {
+                    window.netlifyIdentity.open();
+                }, 100);
+            }
+
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
                     window.netlifyIdentity.on("login", () => {
