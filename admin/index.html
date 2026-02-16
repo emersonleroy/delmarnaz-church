@@ -77,7 +77,7 @@
     <!-- Decap CMS Script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 
-    <!-- Hide loading screen once CMS loads -->
+    <!-- Netlify Identity and CMS Initialization -->
     <script>
         // Hide loading screen when CMS is ready
         document.addEventListener('DOMContentLoaded', function() {
@@ -90,16 +90,66 @@
             }, 2000);
         });
 
-        // Netlify Identity redirect handling
+        // Handle Netlify Identity confirmation and recovery tokens
+        // This checks for #confirmation_token or #recovery_token in the URL
+        if (window.location.hash) {
+            const hash = window.location.hash.substring(1);
+            const params = new URLSearchParams(hash);
+
+            // Check for confirmation token (email verification)
+            if (params.has('confirmation_token')) {
+                console.log('Confirmation token detected');
+                // The Netlify Identity widget will handle this automatically
+            }
+
+            // Check for recovery token (password reset)
+            if (params.has('recovery_token')) {
+                console.log('Recovery token detected');
+                // The Netlify Identity widget will handle this automatically
+            }
+
+            // Check for invite token (new user invitation)
+            if (params.has('invite_token')) {
+                console.log('Invite token detected');
+                // The Netlify Identity widget will handle this automatically
+            }
+        }
+
+        // Netlify Identity widget initialization and redirect handling
         if (window.netlifyIdentity) {
+            // Initialize the widget
+            window.netlifyIdentity.init({
+                container: '#netlify-identity-modal', // Optional: mount to specific element
+                locale: 'en' // Set language
+            });
+
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
+                    // User is not logged in
                     window.netlifyIdentity.on("login", () => {
+                        // Redirect to admin after successful login
                         document.location.href = "/admin/";
                     });
+                } else {
+                    // User is already logged in
+                    console.log('User logged in:', user.email);
                 }
+            });
+
+            // Handle logout
+            window.netlifyIdentity.on("logout", () => {
+                console.log('User logged out');
+                document.location.href = "/";
+            });
+
+            // Handle errors
+            window.netlifyIdentity.on("error", err => {
+                console.error('Netlify Identity Error:', err);
             });
         }
     </script>
+
+    <!-- Optional: Container for Netlify Identity modal -->
+    <div id="netlify-identity-modal"></div>
 </body>
 </html>
