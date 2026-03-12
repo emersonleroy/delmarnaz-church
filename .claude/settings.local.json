@@ -8,7 +8,24 @@
       "Bash(kill:*)",
       "Bash(grep:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit - Delmar Church of Nazarene website\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(gh auth:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(ssh-keygen:*)",
+      "Bash(ssh-keyscan:*)",
+      "Bash(~/.ssh/known_hosts)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd homepage hero image and additional photos\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd hero images to ministry pages\n\n- Youth Ministry: youth-ministry-activity-hero.jpg\n- Worship Ministry: worship-ministry-hero.jpg\n- Outreach: outreach-serving-hero.jpg\n- Children''s Ministry: children-ministry-hero.jpg\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(git restore:*)",
+      "Bash(if [ -f .gitignore ])",
+      "Bash(then echo \".gitignore exists:\")",
+      "Bash(else echo \"No .gitignore file found\")",
+      "Bash(fi)"
     ]
   }
 }
