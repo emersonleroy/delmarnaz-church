@@ -883,8 +883,9 @@
 
                     <!-- Newsletter Signup -->
                     <p class="text-primary-200 text-sm mb-3">Subscribe to our newsletter:</p>
-                    <form action="#" method="POST" class="space-y-2" data-netlify="true" name="newsletter">
+                    <form name="newsletter" method="POST" action="/pages/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="space-y-2">
                         <input type="hidden" name="form-name" value="newsletter">
+                        <p class="hidden"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
                         <input
                             type="text"
                             name="name"
