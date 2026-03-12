@@ -472,28 +472,43 @@
         <!-- ============================================
              NEW HERE? CTA BANNER
              ============================================ -->
-        <section class="bg-primary-800 py-14 md:py-18 px-4">
-            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <section class="relative overflow-hidden bg-gradient-to-r from-accent-600 via-accent-500 to-accent-600 py-14 md:py-20">
+            <!-- Decorative circles -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute -top-16 -left-16 w-64 h-64 bg-white/10 rounded-full"></div>
+                <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-white/10 rounded-full"></div>
+                <div class="absolute top-1/2 left-1/4 w-40 h-40 bg-white/5 rounded-full -translate-y-1/2"></div>
+            </div>
 
-                <!-- Text -->
-                <div class="text-center md:text-left">
-                    <p class="text-accent-400 font-bold uppercase tracking-widest text-sm mb-2">👋 First Time Here?</p>
-                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-3">We'd Love to Connect With You!</h2>
-                    <p class="text-primary-200 text-lg max-w-xl">
-                        We'd love to get to know you! Let us know you'll be joining us and we'll make sure you feel right at home.
-                    </p>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+
+                    <!-- Wave emoji + text -->
+                    <div class="text-center lg:text-left flex-1">
+                        <div class="flex items-center justify-center lg:justify-start gap-4 mb-4">
+                            <span class="text-5xl" role="img" aria-label="Waving hand">👋</span>
+                            <span class="inline-block bg-primary-900/20 text-primary-900 text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">First Time Here?</span>
+                        </div>
+                        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-900 mb-4 leading-tight">
+                            New Here? <br class="hidden sm:block">We'd Love to Meet You!
+                        </h2>
+                        <p class="text-primary-800 text-lg md:text-xl max-w-xl mx-auto lg:mx-0">
+                            Or let us know you'll be joining us — we'll make sure you feel right at home from the moment you walk through our doors.
+                        </p>
+                    </div>
+
+                    <!-- CTA Button Block -->
+                    <div class="flex-shrink-0 text-center">
+                        <a href="/pages/connect/new-here.html"
+                           class="group inline-flex flex-col items-center gap-3 bg-primary-900 hover:bg-primary-800 text-white rounded-2xl px-10 py-8 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:-translate-y-1">
+                            <span class="text-4xl" role="img" aria-label="Handshake">🤝</span>
+                            <span class="font-bold text-xl md:text-2xl tracking-wide">Let's Connect</span>
+                            <span class="text-primary-200 text-sm">We'd love to hear from you →</span>
+                        </a>
+                        <p class="text-primary-800 text-sm mt-4 opacity-75">Takes less than 2 minutes</p>
+                    </div>
+
                 </div>
-
-                <!-- Button -->
-                <div class="flex-shrink-0 text-center">
-                    <a href="/pages/connect/new-here.html"
-                       class="inline-flex items-center gap-3 bg-accent-500 hover:bg-accent-400 text-primary-900 font-bold text-lg py-4 px-10 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap">
-                        <span role="img" aria-hidden="true">👋</span>
-                        Let Us Know You're Coming
-                    </a>
-                    <p class="text-primary-400 text-sm mt-3">Takes less than 2 minutes</p>
-                </div>
-
             </div>
         </section>
 
