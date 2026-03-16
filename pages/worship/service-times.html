@@ -198,7 +198,7 @@
                                     <p class="text-gray-600">36926 Hideaway Ln<br>Delmar, DE 19940</p>
                                 </div>
                             </div>
-                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full">
+                            <a href="https://maps.google.com/?q=36926+Hideaway+Ln,+Delmar,+DE+19940" target="_blank" rel="noopener noreferrer" class="btn btn-primary w-full">
                                 Get Directions
                             </a>
                         </div>
@@ -211,14 +211,17 @@
                         </div>
                     </div>
                     <div>
-                        <!-- TODO: Add Google Maps embed or static map -->
-                        <div class="bg-gray-200 rounded-xl h-80 flex items-center justify-center">
-                            <div class="text-center text-gray-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                                </svg>
-                                <p>Map will be displayed here</p>
-                            </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg" style="height: 450px;">
+                            <iframe
+                                src="https://maps.google.com/maps?q=36926+Hideaway+Ln,+Delmar,+DE+19940&output=embed"
+                                width="100%"
+                                height="100%"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Delmar Church of Nazarene Location - 36926 Hideaway Ln, Delmar, DE 19940">
+                            </iframe>
                         </div>
                     </div>
                 </div>
