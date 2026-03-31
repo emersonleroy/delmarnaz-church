@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouvo Isit la? Byenveni! | Delmar Church of Nazarene</title>
+    <meta name="description" content="Byenveni nan Delmar Church of Nazarene! Nou kontan anpil ou la. Aprann sou fanmi legliz nou an, sa pou atann, ak kijan pou konekte avèk nou.">
+    <meta name="keywords" content="new visitor, first time, welcome, Delmar Church of Nazarene, church visit, Delmar DE">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#E8F5E3', 100: '#D4E8C8', 200: '#B5D69E', 300: '#8FBF6E',
+                            400: '#72A84E', 500: '#5A9236', 600: '#4A7C2C', 700: '#3A6620',
+                            800: '#2D5016', 900: '#1A3009',
+                        },
+                        accent: {
+                            50: '#FCF6E8', 100: '#F8ECC8', 200: '#F2DBA4', 300: '#EAC97D',
+                            400: '#E0B85C', 500: '#D4A73F', 600: '#C4962C', 700: '#A8801A',
+                            800: '#8B6914', 900: '#6B4F0F',
+                        },
+                        cream: '#FAF7F2',
+                        'pale-green': '#E8F5E3',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <style>
+        /* Step number styling */
+        .step-number {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-cream">
+    <a href="#main-content" class="skip-link">Ale nan kontni prensipal la</a>
+
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="site-header">
+        <div class="header-top bg-primary-800">
+            <div class="container flex justify-between items-center text-sm py-2">
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="tel:+13028462899" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                        <span>(302) 846-2899</span>
+                    </a>
+                    <a href="mailto:office@delmarnaz.com" class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        <span>office@delmarnaz.com</span>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 ml-auto">
+                    <span class="text-white/90">Sunday Worship: 10:30 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main bg-white shadow-sm">
+            <div class="nav-container">
+                <a href="/ht/" class="site-logo flex items-center gap-3">
+                    <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 md:h-14 w-auto" loading="eager">
+                    <div class="site-logo-text text-primary-800 hidden sm:block">
+                        Legliz Delmar
+                        <span class="text-primary-600">Nazareyen</span>
+                    </div>
+                </a>
+
+                <nav class="main-nav" aria-label="Main navigation">
+                    <ul class="nav-menu">
+                        <li class="nav-item"><a href="/ht/" class="nav-link">Akèy</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Konsènan</a>
+                            <div class="nav-dropdown">
+                                <a href="/ht/pages/about/our-beliefs.html">Sa Nou Kwè</a>
+                                <a href="/ht/pages/about/mission-vision.html">Misyon ak Vizyon</a>
+                                <a href="/ht/pages/about/staff.html">Ekip Pastoral</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Ministè yo</a>
+                            <div class="nav-dropdown">
+                                <a href="/ht/pages/ministries/youth.html">Ministè Jèn yo</a>
+                                <a href="/ht/pages/ministries/children.html">Ministè Timoun yo</a>
+                                <a href="/ht/pages/ministries/outreach.html">Sèvis Kominotè</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown" aria-expanded="false">Adorasyon</a>
+                            <div class="nav-dropdown">
+                                <a href="/ht/pages/worship/service-times.html">Orè Sèvis yo</a>
+                                
+                                <a href="/ht/pages/worship/livestream.html">Gade an Dirèk</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a href="/ht/pages/events.html" class="nav-link">Evènman yo</a></li>
+                        <li class="nav-item"><a href="/ht/pages/give.html" class="nav-link">Bay</a></li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link has-dropdown active" aria-expanded="false">Konekte</a>
+                            <div class="nav-dropdown">
+                                <a href="/ht/pages/connect/new-here.html">Nouvo nan mitan nou?</a>
+                                <a href="/ht/pages/connect/prayer-requests.html">Demann Lapriyè</a>
+                                <a href="/ht/pages/connect/contact.html">Kontakte Nou</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn" data-lang="en">EN</button>
+                        <button class="lang-btn active" data-lang="ht">HT</button>
+                        <button class="lang-btn disabled" data-lang="fr">FR</button>
+                    </div>
+                </nav>
+
+                <button class="mobile-menu-toggle" aria-expanded="false" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="/ht/" class="site-logo flex items-center gap-2">
+                <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-10 w-auto">
+                <span class="font-serif font-bold text-primary-800 text-sm">Delmar Church of Nazarene</span>
+            </a>
+            <button class="mobile-nav-close" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="/ht/">Akèy</a></li>
+            <li><a href="/ht/pages/ministries/youth.html">Ministè yo</a></li>
+            <li><a href="/ht/pages/worship/service-times.html">Adorasyon</a></li>
+            <li><a href="/ht/pages/events.html">Evènman yo</a></li>
+            <li><a href="/ht/pages/give.html">Bay</a></li>
+            <li><a href="/ht/pages/connect/contact.html">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main id="main-content">
+
+        <!-- ============================================
+             HERO SECTION
+             ============================================ -->
+        <section class="relative min-h-[50vh] flex items-center justify-center text-center text-white overflow-hidden">
+            <!-- Background -->
+            <div class="absolute inset-0 z-0">
+                <div class="w-full h-full bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700"></div>
+            </div>
+
+            <!-- Overlay -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-br from-primary-900/90 via-primary-800/85 to-primary-700/80"></div>
+
+            <!-- Content -->
+            <div class="relative z-20 max-w-4xl px-4 py-16">
+                <h1 class="font-serif text-5xl md:text-6xl font-bold mb-4 text-white">Nouvo Isit la? Byenveni!</h1>
+                <p class="text-xl md:text-2xl text-primary-100 mb-6 max-w-2xl mx-auto">
+                    Nou kontan anpil ou la. Delmar Church of Nazarene se yon kote kote ou ka apatni, kwè, epi grandi nan lafwa.
+                </p>
+
+                <!-- Breadcrumb -->
+                <nav class="mt-8 text-sm text-white/70">
+                    <a href="/ht/" class="hover:text-white">Akèy</a>
+                    <span class="mx-2">/</span>
+                    <a href="#" class="hover:text-white">Konekte</a>
+                    <span class="mx-2">/</span>
+                    <span class="text-white">New Here</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- ============================================
+             WELCOME MESSAGE SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-cream">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-6">Byenveni nan Fanmi Legliz Nou an</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                        Kit ou ap eksplore lafwa pou premye fwa oswa ou ap chèche yon nouvo kay legliz, nou kontan akonpaye ou nan chemen an. Nan Delmar Church of Nazarene, ou ap jwenn yon kominote penyen ki santre sou Jezikri kote tout moun byenveni jan yo ye.
+                    </p>
+                    <div class="bg-white rounded-xl p-6 shadow-md border-l-4 border-accent-600">
+                        <p class="text-lg text-gray-700 italic">
+                            "We can't wait to meet you!"
+                        </p>
+                        <p class="text-primary-800 font-semibold mt-2">— Pastor Charles Leroy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             VISITOR CONNECTION FORM
+             ============================================ -->
+        <section class="py-16 md:py-24 bg-white" id="visitor-form">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto">
+
+                    <!-- Section Header -->
+                    <div class="text-center mb-12">
+                        <span class="inline-block bg-accent-100 text-accent-700 text-sm font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-4">Connection Card</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">Nou Kontan Anpil Ou La!</h2>
+                        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                            Ranpli ti fòm rapid sa a e n ap kontakte ou pèsonèlman pou akeyi ou. Pa gen presyon — jis yon bèl bonjou!
+                        </p>
+                    </div>
+
+                    <!-- Visitor Form -->
+                    <form
+                        name="new-visitor-form"
+                        method="POST"
+                        action="/ht/pages/connect/thank-you.html"
+                        data-netlify="true"
+                        netlify-honeypot="bot-field"
+                        class="bg-pale-green rounded-2xl p-8 md:p-12 shadow-lg"
+                    >
+                        <input type="hidden" name="form-name" value="new-visitor-form">
+                        <p class="hidden"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+                        <!-- Name Row -->
+                        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="first-name" class="form-label block font-semibold text-primary-900 mb-2">Premye Non <span class="text-red-500">*</span></label>
+                                <input type="text" id="first-name" name="first-name" required placeholder="Jane" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                            <div>
+                                <label for="last-name" class="form-label block font-semibold text-primary-900 mb-2">Siyati <span class="text-red-500">*</span></label>
+                                <input type="text" id="last-name" name="last-name" required placeholder="Smith" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Email & Phone Row -->
+                        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="visitor-email" class="form-label block font-semibold text-primary-900 mb-2">Adrès Imèl <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                                <input type="email" id="visitor-email" name="email" placeholder="jane@example.com" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                            <div>
+                                <label for="visitor-phone" class="form-label block font-semibold text-primary-900 mb-2">Nimewo Telefòn <span class="text-red-500">*</span></label>
+                                <input type="tel" id="visitor-phone" name="phone" required placeholder="(555) 555-5555" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="mb-6">
+                            <label for="address" class="form-label block font-semibold text-primary-900 mb-2">Adrès Lakay <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                            <input type="text" id="address" name="address" placeholder="Adrès Ri" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all mb-3">
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                                <input type="text" name="city" placeholder="Vil" class="form-input col-span-1 px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                                <input type="text" name="state" placeholder="Eta" class="form-input px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                                <input type="text" name="zip" placeholder="Kòd Postal" class="form-input col-span-2 sm:col-span-1 px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- How did you hear about us -->
+                        <div class="mb-6">
+                            <label for="heard-from" class="form-label block font-semibold text-primary-900 mb-2">Kijan ou te tande pale de nou? <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                            <select id="heard-from" name="heard-from" class="form-select w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                                <option value="" disabled selected>Chwazi yon opsyon...</option>
+                                <option value="Friend or Family">Zanmi / Fanmi</option>
+                                <option value="Google Search">Google Search</option>
+                                <option value="Social Media">Rezo Sosyal</option>
+                                <option value="Drove By">Ou te Pase Devan Legliz la</option>
+                                <option value="Other">Lòt</option>
+                            </select>
+                        </div>
+
+                        <!-- Visit date & group size row -->
+                        <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="visit-date" class="form-label block font-semibold text-primary-900 mb-2">Mwen planifye vizite <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                                <input type="date" id="visit-date" name="visit-date" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                            <div>
+                                <label for="group-size" class="form-label block font-semibold text-primary-900 mb-2">Kantite moun k ap vini avèk ou <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                                <input type="number" id="group-size" name="group-size" min="1" max="20" value="1" class="form-input w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Interests (checkboxes) -->
+                        <div class="mb-6">
+                            <p class="form-label block font-semibold text-primary-900 mb-3">Sa ki enterese m: <span class="text-gray-400 font-normal text-sm">(select all that apply)</span></p>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Learning more about the church" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Aprann plis sou legliz la</span>
+                                </label>
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Joining a small group" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Vin jwenn yon ti gwoup</span>
+                                </label>
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Volunteering opportunities" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Opòtinite volontarya</span>
+                                </label>
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Children's ministry" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Ministè timoun yo</span>
+                                </label>
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Youth ministry" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Ministè jèn yo</span>
+                                </label>
+                                <label class="flex items-center gap-3 bg-white rounded-lg px-4 py-3 border border-primary-200 cursor-pointer hover:border-primary-500 transition-all">
+                                    <input type="checkbox" name="interests" value="Worship ministry" class="w-4 h-4 accent-primary-700">
+                                    <span class="text-gray-700">Ministè adorasyon</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Questions / Prayer Requests -->
+                        <div class="mb-8">
+                            <label for="visitor-message" class="form-label block font-semibold text-primary-900 mb-2">Èske ou gen kesyon oswa demann lapriyè? <span class="text-gray-400 font-normal text-sm">(optional)</span></label>
+                            <textarea id="visitor-message" name="message" rows="4" placeholder="Pa ezite pataje sa ki nan kè ou..." class="form-textarea w-full px-4 py-3 rounded-lg border border-primary-200 bg-white focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-200 transition-all resize-none"></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="submit" class="w-full bg-primary-800 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-xl text-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                            </svg>
+                            Konekte Avèk Nou
+                        </button>
+
+                        <p class="text-center text-gray-500 text-sm mt-4">
+                            N ap kontakte ou nan 1–2 jou pou di bonjou. Nou pa ka tann pou rankontre ou!
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             NEXT STEPS SECTION
+             ============================================ -->
+        <section class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary-900 mb-4">Pwochen Etap Ou yo</h2>
+                    <p class="text-lg text-gray-600">Men kijan pou kòmanse chemen ou avèk nou</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Step 1: Attend a Service -->
+                    <div class="bg-pale-green rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+                        <div class="step-number bg-primary-700 text-white mx-auto mb-6">1</div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-4">Asiste yon Sèvis</h3>
+                        <p class="text-gray-600 mb-6">
+                            Vin jwenn nou pou adorasyon chak dimanch! Lekòl Dimanch a 9:00 AM, Sèvis Adorasyon a 10:30 AM
+                        </p>
+                        <a href="/ht/pages/connect/visit.html" class="inline-block bg-primary-700 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all">
+                            Planifye Vizit Ou
+                        </a>
+                    </div>
+
+                    <!-- Step 2: Connect with Us -->
+                    <div class="bg-pale-green rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+                        <div class="step-number bg-accent-600 text-primary-900 mx-auto mb-6">2</div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-4">Konekte Avèk Nou</h3>
+                        <p class="text-gray-600 mb-6">
+                            Ranpli yon kat koneksyon, rankontre pastè nou an, oswa kontakte nou ak nenpòt kesyon ou genyen
+                        </p>
+                        <a href="/ht/pages/connect/contact.html" class="inline-block bg-primary-700 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all">
+                            Kontakte Nou
+                        </a>
+                    </div>
+
+                    <!-- Step 3: Get Involved -->
+                    <div class="bg-pale-green rounded-2xl p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+                        <div class="step-number bg-primary-700 text-white mx-auto mb-6">3</div>
+                        <h3 class="font-serif text-xl font-bold text-primary-900 mb-4">Patisipe</h3>
+                        <p class="text-gray-600 mb-6">
+                            Eksplore ministè nou yo epi jwenn fason pou sèvi, grandi, epi bati kominote
+                        </p>
+                        <a href="/ht/pages/ministries/youth.html" class="inline-block bg-primary-700 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-all">
+                            Eksplore Ministè yo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CTA SECTION
+             ============================================ -->
+        <section class="py-16 md:py-20 bg-primary-800 relative overflow-hidden">
+            <!-- Decorative Background -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-white mb-4">Prè pou Vizite?</h2>
+                    <p class="text-xl text-primary-100 mb-10">
+                        Nou pa ka tann pou rankontre ou epi akeyi ou nan fanmi legliz nou an!
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/ht/pages/connect/visit.html" class="btn btn-lg bg-accent-600 hover:bg-accent-500 text-primary-900 font-bold border-2 border-accent-600 hover:border-accent-500 shadow-xl transition-all inline-flex items-center justify-center gap-2 py-4 px-8 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            Planifye Vizit Ou
+                        </a>
+                        <a href="/ht/pages/connect/contact.html" class="btn btn-lg bg-transparent hover:bg-white/10 text-white font-bold border-2 border-white shadow-xl transition-all inline-flex items-center justify-center gap-2 py-4 px-8 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Kontakte Nou
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="bg-primary-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- Contact Info Column -->
+                <div>
+                    <a href="/ht/" class="flex items-center gap-3 mb-6">
+                        <img src="/assets/images/church-logo.png" alt="Delmar Church of Nazarene Logo" class="h-12 w-auto brightness-0 invert">
+                        <span class="font-serif font-bold text-xl">Legliz Delmar<br><span class="text-primary-300 text-sm font-normal">Nazareyen</span></span>
+                    </a>
+                    <div class="space-y-3 text-primary-200">
+                        <p class="flex items-start gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>36926 Hideaway Ln<br>Delmar, DE 19940</span>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <a href="tel:+13028462899" class="hover:text-white transition-colors">(302) 846-2899</a>
+                        </p>
+                        <p class="flex items-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <a href="mailto:office@delmarnaz.com" class="hover:text-white transition-colors">office@delmarnaz.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Lyen Rapid</h5>
+                    <ul class="space-y-3">
+                        <li><a href="/ht/pages/ministries/youth.html" class="text-primary-200 hover:text-white transition-colors">Ministè yo</a></li>
+                        <li><a href="/ht/pages/events.html" class="text-primary-200 hover:text-white transition-colors">Evènman yo</a></li>
+                        <li><a href="/ht/pages/give.html" class="text-primary-200 hover:text-white transition-colors">Bay</a></li>
+                        <li><a href="/ht/pages/connect/contact.html" class="text-primary-200 hover:text-white transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Times Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Orè Sèvis yo</h5>
+                    <ul class="space-y-3 text-primary-200">
+                        <li class="flex justify-between">
+                            <span>Lekòl Dimanch:</span>
+                            <span class="text-accent-400 font-semibold">9:00 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Adorasyon Dimanch:</span>
+                            <span class="text-accent-400 font-semibold">10:30 AM</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>Etid Biblik Mèkredi:</span>
+                            <span class="text-accent-400 font-semibold">6:00 PM</span>
+                        </li>
+                    </ul>
+                    <a href="/ht/pages/worship/livestream.html" class="inline-flex items-center gap-2 text-accent-400 hover:text-accent-300 mt-4 font-semibold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        Gade an Dirèk
+                    </a>
+                </div>
+
+                <!-- Connect Column -->
+                <div>
+                    <h5 class="font-bold text-white mb-6 text-lg">Konekte Avèk Nou</h5>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <a href="https://www.facebook.com/delmarchurch" aria-label="Follow us on Facebook" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/delmarnazarenechurch/" aria-label="Follow us on Instagram" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="https://www.youtube.com/@delmarchurchofthenazarene" aria-label="Watch us on YouTube" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        </a>
+                        <a href="http://www.tiktok.com/@delmarnazarenechurch" aria-label="Follow us on TikTok" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center text-white hover:bg-accent-600 hover:text-primary-900 transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        </a>
+                    </div>
+                    <p class="text-primary-200 text-sm">
+                        Vin jwenn nou dimanch sa a!<br>
+                        Nou ta renmen rankontre w.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-white/10 pt-8 text-center">
+                <p class="text-primary-400">&copy; 2025 Delmar Church of Nazarene. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/language-switcher.js"></script>
+
+</body>
+</html>
