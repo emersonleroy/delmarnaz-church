@@ -2,17 +2,14 @@
  * Delmar Nazarene Church - Language Switcher
  * ==========================================
  *
- * This module handles language switching functionality.
+ * Handles language switching between English (/en/, /pages/),
+ * Haitian Creole (/ht/), and French (/fr/).
  *
- * CURRENT STATUS (Phase 1):
- * - Only English is active
- * - Haitian Creole and French buttons are disabled
- * - Language preference is stored but not acted upon
- *
- * FUTURE (Phase 2 & 3):
- * - Enable Haitian Creole and French buttons
- * - Implement full language switching
- * - Add language-specific content loading
+ * URL mapping logic:
+ *   EN homepage  : /en/                        → /ht/  or /fr/
+ *   EN sub-pages : /pages/about/staff.html     → /ht/pages/about/staff.html
+ *   HT sub-pages : /ht/pages/about/staff.html  → /pages/about/staff.html
+ *   FR sub-pages : /fr/pages/about/staff.html  → /ht/pages/about/staff.html
  */
 
 'use strict';
@@ -35,7 +32,7 @@ const LanguageSwitcher = {
                 name: 'Haitian Creole',
                 nativeName: 'Kreyòl Ayisyen',
                 dir: 'ltr',
-                enabled: false, // Phase 2
+                enabled: true,
                 path: '/ht/'
             },
             fr: {
@@ -43,7 +40,7 @@ const LanguageSwitcher = {
                 name: 'French',
                 nativeName: 'Français',
                 dir: 'ltr',
-                enabled: false, // Phase 3
+                enabled: true,
                 path: '/fr/'
             }
         },
@@ -193,31 +190,55 @@ const LanguageSwitcher = {
     },
 
     /**
-     * Switch to a new language
+     * Switch to a new language, preserving the equivalent page.
+     *
+     * URL structure:
+     *   English homepage  → /en/
+     *   English sub-pages → /pages/about/staff.html   (no /en/ prefix)
+     *   HT/FR homepage    → /ht/  or  /fr/
+     *   HT/FR sub-pages   → /ht/pages/...  or  /fr/pages/...
+     *
      * @param {string} langCode - The language code to switch to
      */
     switchLanguage(langCode) {
-        const langConfig = this.config.languages[langCode];
-
-        // Store preference
         this.storePreference(langCode);
 
-        // Navigate to the language-specific page
-        // This constructs the equivalent page path in the new language
         const currentPath = window.location.pathname;
-        const currentLangMatch = currentPath.match(/^\/(en|ht|fr)(\/.*)?$/);
 
-        let newPath;
-        if (currentLangMatch) {
-            // Replace current language prefix with new one
-            const pagePath = currentLangMatch[2] || '/';
-            newPath = langConfig.path + pagePath.substring(1);
+        // Case 1: currently on /ht/... or /fr/... (language-prefixed)
+        const htFrMatch = currentPath.match(/^\/(ht|fr)(\/.*)?$/);
+
+        // Case 2: currently on /en/ homepage
+        const enHomeMatch = /^\/en\/?(?:index\.html)?$/.test(currentPath);
+
+        // Determine the language-agnostic page path
+        let pagePath;
+        if (htFrMatch) {
+            // Strip /ht or /fr prefix → e.g. /pages/about/staff.html or /
+            pagePath = htFrMatch[2] || '/';
+        } else if (enHomeMatch) {
+            pagePath = '/';
         } else {
-            // No language prefix, just go to the language root
-            newPath = langConfig.path;
+            // English sub-page with no language prefix → /pages/about/staff.html
+            pagePath = currentPath;
         }
 
-        // Navigate to new language version
+        // Normalise bare index
+        if (pagePath === '/index.html') pagePath = '/';
+
+        // Build the target URL
+        let newPath;
+        if (pagePath === '/') {
+            // Homepage for any language
+            newPath = '/' + langCode + '/';
+        } else if (langCode === 'en') {
+            // English sub-pages live directly at /pages/... (no /en/ prefix)
+            newPath = pagePath;
+        } else {
+            // HT / FR sub-pages live at /ht/pages/... or /fr/pages/...
+            newPath = '/' + langCode + pagePath;
+        }
+
         window.location.href = newPath;
     },
 
